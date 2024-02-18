@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    border: none;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    gap: 0;
+}
+h1{
+    border: 1px solid red;
+    height: 10%;
+    background-color: rgb(57, 82, 192);
+    border: none;
+    color: white;
+    margin: 0;
+    margin-left: -350px;
+}
+.choiceCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 80%;
+    border: 1px solid red;
+    gap: 20px;
+    background-color: skyblue;
+}
+
+.choiceCont > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    gap: 2%;
+    border: 1px solid gold;
+    height: 70%;
+}
+.btnImgDiv{
+    border: 1px solid yellow;
+    position: relative;
+    gap: 0px;
+    height: 40%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.choiceCont >div > div >button {
+    height: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: transparent;
+    width: 100%;
+    
+    
+}
+.choiceCont > div > div > div {
+    height: 8%;
+    width: 100%;
+    border: 1px solid red;
+    margin-bottom: 50px;
+    position: relative;
+}
+img{
+    width: 80%;
+    height: 70%;
+    position: relative;
+  
+}
+
+#playBtn{
+    border: 1px solid black;
+}
+#rockCont{
+    background-image: url('./imgs/rock.svg');
+    background-repeat: no-repeat;
+}
+#paperCont{
+    background-image: url('./imgs/paper.svg');
+    background-repeat: no-repeat;
+}
+#scissorsCont{
+    background-image: url('./imgs/scissors.svg');
+    background-repeat: no-repeat;
+}
