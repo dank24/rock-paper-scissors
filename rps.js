@@ -4,6 +4,7 @@ const scissorsBtn = document.querySelector('#scissors')
 const paperBtn = document.querySelector('#paper')
 const playBtn = document.querySelector('#playBtn')
 const btns = document.querySelectorAll('.btns')
+const playerscreen = document.querySelector('.playerDiv')
 
 const scissorsDiv = document.querySelector('.scissorsDiv')
 const paperDiv = document.querySelector('.paperDiv')
@@ -77,14 +78,58 @@ function mRPC() {
 }
 
 function guiRPC() {
-
+let appended = false;
     btns.forEach(e =>{
         e.addEventListener('click', () =>{
+          let p = document.createElement('p')
+           p.classList.add('a') 
             let i = e.id
             console.log(rPs(e.id))
             console.log(i)
+            
+            
             if(e.id === 'rock'){
+              if(appended === true) {
+                playerscreen.children[3].remove()
+              }
+               p.textContent = 'Player Chose rock'
+               playerscreen.appendChild(p)
+               appended = true
+            
                 rockDiv.style.backgroundColor ='yellow'
+                paperDiv.style.backgroundColor 
+                  ='transparent'
+                scissorsDiv.style.backgroundColor 
+                  ='transparent'
+            }
+                  
+            if(e.id === 'paper'){
+              if(appended === true) {
+                playerscreen.children[3].remove()
+              }
+              p.textContent = 'Player Chose paper'
+              playerscreen.appendChild(p)
+              appended = true
+              
+                rockDiv.style.backgroundColor ='transparent'
+                paperDiv.style.backgroundColor 
+                  ='yellow'
+                scissorsDiv.style.backgroundColor 
+                  ='transparent'
+            }
+             if(e.id === 'scissors'){
+               if(appended === true) {
+                 playerscreen.children[3].remove()
+              }
+              p.textContent = 'Player Chose Scissors'
+              playerscreen.appendChild(p)
+              appende = true
+              
+                rockDiv.style.backgroundColor ='transparent'
+                paperDiv.style.backgroundColor 
+                  ='transparent'
+                scissorsDiv.style.backgroundColor 
+                  ='yellow'
             }
         })
     })

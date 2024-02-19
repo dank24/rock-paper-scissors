@@ -15,12 +15,10 @@ body {
 }
 h1{
     border: 1px solid red;
-    height: 10%;
+    height: 5%;
     background-color: rgb(57, 82, 192);
-    border: none;
     color: white;
     margin: 0;
-    margin-left: -350px;
 }
 .choiceCont{
     display: flex;
@@ -37,12 +35,16 @@ h1{
 .choiceCont > div {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: center ;
+    align-items: center ;
     width: 45%;
     gap: 2%;
-    border: 1px solid gold;
-    height: 70%;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    height: 40%;
+}
+.choiceCont > div > :nth-child(4){
+ margin: 0;
 }
 .btnImgDiv{
     border: 1px solid yellow;
@@ -52,24 +54,18 @@ h1{
     width: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .choiceCont >div > div >button {
-    height: 100%;
-    position: absolute;
-    height: 100%;
+    height: 90%;
     background-color: transparent;
     width: 100%;
-    
-    
 }
 .choiceCont > div > div > div {
     height: 8%;
     width: 100%;
     border: 1px solid red;
-    margin-bottom: 50px;
-    position: relative;
 }
 img{
     width: 80%;
@@ -84,12 +80,16 @@ img{
 #rockCont{
     background-image: url('./imgs/rock.svg');
     background-repeat: no-repeat;
+    background-position: center; 
 }
 #paperCont{
     background-image: url('./imgs/paper.svg');
     background-repeat: no-repeat;
+    background-position: center;
 }
 #scissorsCont{
     background-image: url('./imgs/scissors.svg');
     background-repeat: no-repeat;
+    
+    background-position: center;
 }
