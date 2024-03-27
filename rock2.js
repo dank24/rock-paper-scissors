@@ -18,15 +18,13 @@ const rockImg = document.querySelector('#rockImg')
 const scissorsImg = document.querySelector('#scissorsImg')
 const paperImg = document.querySelector('#paperImg')
 
-let attach = false
-
 function computerChoose() {
     const it = Math.floor(Math.random()*3)
         return( compChoices[it] )
 }
 
 function playerChoose(p) {
-    let f = p.toLocaleLowerCase()
+    let f = p.toLowerCase()
 
     if(f === 'rock') { return('rock') }
     else if(f === 'paper') { return('paper')}
@@ -89,51 +87,95 @@ function mRPC() {
 
 //browswe Gui Rock Paper Scissors Game
 function gui() {
+  let attach = false
+  let attach2 = false 
+  
     btns.forEach(e =>{
         e.addEventListener('click', () =>{
-            if(e.id === 'rock') {
-                if(attach == true) {
+          let c = computerChoose() 
+          
+          let mRockImg = rockImg.cloneNode(true)
+          let mPaperImg = paperImg.cloneNode(true )
+          let mScissorsImg = scissorsImg.cloneNode(true)
+          
+            if(attach2 == true){
+                compScreen.children[1].remove() 
+                compScreen.children[0].remove()
+              }
+              
+                 if(attach == true) {
                     playerscreen.children[1].remove()
-                    playerscreen.children[2].remove()
+                    playerscreen.children[0].remove()
                     attach = false
                 }
-
+          
+            if(e.id == 'rock') {
                 let a = document.createElement('p')
                 a.textContent = 'Player Chose Rock',
 
-                playerscreen.appendChild(rockImg);
-                attach = true
+                playerscreen.appendChild(mRockImg);
                 playerscreen.appendChild(a)
+                attach = true 
 
             }
 
             if(e.id === 'paper') {
-                if(attach == true) {
-                    playerscreen.children[1].remove()
-                    playerscreen.children[2].remove()
-                }
-
                 let a = document.createElement('p')
                 a.textContent = 'Player Chose Paper',
 
-                playerscreen.appendChild(paperImg);
-                attach = true
+                playerscreen.appendChild(mPaperImg);
                 playerscreen.appendChild(a)
+                attach = true 
             }
 
             if(e.id === 'scissors') {
-                if(attach == true) {
-                    playerscreen.children[1].remove()
-                    playerscreen.children[2].remove()
-                }
-
                 let a = document.createElement('p')
                 a.textContent = 'Player Chose Scissors',
 
-                playerscreen.appendChild(scissorsImg);
-                attach = true;
+                playerscreen.appendChild(mScissorsImg);
                 playerscreen.appendChild(a)
+                attach = true; 
             }
+            
+            if(c == 'rock'){
+              let a2 = document.createElement('p')
+              a2.textContent = "Computer plays 'Rock'"
+              
+              compScreen.appendChild(mRockImg)
+              compScreen.appendChild(a2)
+              attach2 = true
+            } 
+            
+            if(c == 'paper'){
+              let a2 = document.createElement('p')
+              a2.textContent = "Computer plays 'Paper'"
+              
+              compScreen.appendChild(mPaperImg)
+              compScreen.appendChild(a2)  
+              attach2 = true 
+            } 
+            
+            if(c == 'scissors'){
+              
+             let a2 = document.createElement('p')
+              a2.textContent = "Computer plays 'Scissors'"
+             
+              compScreen.appendChild(mScissorsImg);
+              compScreen.appendChild(a2); 
+              attach2 = true 
+            } 
+            
+            if(c === e.id){
+              let a3 = document.createElement('p')
+              let a4 = document.createElement('p')
+              a3.textContent = `you play ${e.id} `
+              
+             playerscreen.appendChild(a3)
+             compScreen.appendChild(a4)
+             
+             attach = true
+             attach2 = true 
+            } 
         })
     })
 }
