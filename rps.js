@@ -4,7 +4,13 @@ const scissorsBtn = document.querySelector('#scissors')
 const paperBtn = document.querySelector('#paper')
 const playBtn = document.querySelector('#playBtn')
 const btns = document.querySelectorAll('.btns')
+
+const compScreen = document.querySelector('.computerDiv')
 const playerscreen = document.querySelector('.playerDiv')
+
+const cPaperDiv = document.querySelector('.cPaperDiv')
+const cRockDiv = document.querySelector('.cRockDiv')
+const cScisorsDiv = document.querySelector('.cScissorsDiv')
 
 const scissorsDiv = document.querySelector('.scissorsDiv')
 const paperDiv = document.querySelector('.paperDiv')
@@ -77,21 +83,68 @@ function mRPC() {
  console.log(`playerScore: ${pScore}, computerScore: ${cScore}`)
 }
 
+//browswe Gui Rock Paper Scissors Game
 function guiRPC() {
-let appended = false;
+
+  let cAppended = false;
+  let appended = false;
+
     btns.forEach(e =>{
         e.addEventListener('click', () =>{
           let p = document.createElement('p')
+          let cP = document.createElement('p')
            p.classList.add('a') 
             let i = e.id
-            console.log(rPs(e.id))
+            let cC = computerChoose()
+            let pC = playerChoose(e.id)
             console.log(i)
+            console.log(cC)
             
+            if(cC === 'paper') {
+              if(cAppended === true){
+                compScreen.children[3].remove()
+              }
+              cP.textContent = 'Computer Chose Rock'
+              compScreen.appendChild(cP)
+              cAppended = true
+              
+
+              cPaperDiv.style.backgroundColor = 'yellow'
+              cRockDiv.style.backgroundColor = 'transparent'
+              cScisorsDiv.style.backgroundColor = 'transparent'
+
+
+            }
+            if(cC === 'rock') {
+              if(cAppended === true){
+                compScreen.children[3].remove()
+              }
+              cP.textContent = 'Computer Chose Rock'
+              compScreen.appendChild(cP)
+              cAppended = true
+
+              cPaperDiv.style.backgroundColor = 'transparent'
+              cRockDiv.style.backgroundColor = 'yellow'
+              cScisorsDiv.style.backgroundColor = 'transparent'
+
+            }
+            if(cC === 'scissors') {
+              if(cAppended === true){
+                compScreen.children[3].remove()
+              }
+              cP.textContent = 'Computer Chose Scissors'
+              compScreen.appendChild(cP)
+              cAppended = true
+
+              cPaperDiv.style.backgroundColor = 'transparent'
+              cRockDiv.style.backgroundColor = 'transparent'
+              cScisorsDiv.style.backgroundColor = 'yellow'
+            }
             
             if(e.id === 'rock'){
               if(appended === true) {
                 playerscreen.children[3].remove()
-              }
+              } 
                p.textContent = 'Player Chose rock'
                playerscreen.appendChild(p)
                appended = true
@@ -123,7 +176,7 @@ let appended = false;
               }
               p.textContent = 'Player Chose Scissors'
               playerscreen.appendChild(p)
-              appende = true
+              appended = true
               
                 rockDiv.style.backgroundColor ='transparent'
                 paperDiv.style.backgroundColor 
