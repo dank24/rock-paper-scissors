@@ -21,6 +21,17 @@ body{
     width: 100%;
     height: 10%;
     border: 1px solid black;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+}
+#header > h3 {
+    border: 1px solid rgb(114, 112, 100);
+    text-align: center;
+    width: 30%;
+    background-color: rgb(223, 227, 223);
+    color: rgb(100, 100, 33);
+    
 }
 #body{
     display: flex;
@@ -30,12 +41,21 @@ body{
     width: 100%;
     border: 1px solid red;
 }
+#body p {
+    width: 80%;
+}
 #body > div {
     width: 50%;
     height: 100%;
     border: 1px solid wheat;
     display: flex;
     flex-direction: column;
+    gap: 3%;
+}
+#body > div > div > p {
+    border: 1px solid rgb(170, 170, 220);
+    background-color: rgb(196, 145, 145);
+    margin-left: none;
 }
 .screen {
     height: 85%;
@@ -94,4 +114,13 @@ body{
 }
 .score{
     margin-left: 5%;
+    border: 1px solid gold;
+    background-color: wheat;
+    width: fit-content;
+}
+
+.line {
+    width: 90%;
+    height: 1%;
+    background-color: red;
 }
