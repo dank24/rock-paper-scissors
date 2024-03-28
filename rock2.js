@@ -107,7 +107,7 @@ function gui() {
 
             }
 
-            if(e.id === 'paper') {
+            else if(e.id === 'paper') {
                 if(attach == true) {
                     playerscreen.children[1].remove()
                     playerscreen.children[2].remove()
@@ -121,7 +121,7 @@ function gui() {
                 playerscreen.appendChild(a)
             }
 
-            if(e.id === 'scissors') {
+            else if(e.id === 'scissors') {
                 if(attach == true) {
                     playerscreen.children[1].remove()
                     playerscreen.children[2].remove()
