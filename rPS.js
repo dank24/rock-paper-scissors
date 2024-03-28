@@ -45,62 +45,7 @@ function playerChoose(p) {
     else{ return('Invalid Input')}
 }
 
-//A single Round Of RPS
-function rPs(p) {
-    c = computerChoose()
-    playerChoose(p)
-
-    if(c === 'rock' && p ==='paper' || c === 'paper' && 
-        p === 'scissors' || c === 'scissors' && p ==='rock' ) {
-        return('Player Wins')
-    } 
-
-    if(c === 'paper' && p ==='rock' || c === 'scissors' && 
-        p === 'paper' || c === 'rock' && p ==='scissors' ) {
-        return('Computer Wins')
-    }
-
-    if(p === c) {
-        return('Its A Tie')
-    }
-
-    if(p ==='Invalid Input') {
-        return('Input Is Boogus')
-    }
-}
-
-//Multiple Rounds Of RPC
-function mRPC() {
- let pScore = 0
- let cScore = 0
-    for(let i = 0; i < 5; i++){
-        let r = rPs()
-
-        if(r.startsWith('Computer')) {
-            cScore += 1
-        }
-
-        if(r.startsWith('Player')) {
-            pScore += 1
-        }
-
-        console.log(r)
-    }
-   
- if(pScore == cScore){
-    console.log('Its A Draw')
- } else if(pScore > cScore) 
-    {
-    console.log('Player Wins Multiple')
- } else {
-    console.log('Computer Wins Multiple')
- }
- console.log(`playerScore: ${pScore}, computerScore: ${cScore}`)
-}
-
-//browswe Gui Rock Paper Scissors Game
-
-
+//browswer Gui Rock Paper Scissors Game
 let r = ''
 let cC = ''
 let pC = ''
@@ -123,19 +68,11 @@ function playerRock(){
      let a = document.createElement('p')
      a.textContent = 'You play "Rock"',
 
-<<<<<<< HEAD
-            else if(e.id === 'paper') {
-                if(attach == true) {
-                    playerscreen.children[1].remove()
-                    playerscreen.children[2].remove()
-                }
-=======
       playerscreen.appendChild(rockImg);
       playerscreen.appendChild(a)
       pC = 'paper'
       attach = true 
 } 
->>>>>>> fef6de86d6f12090db9047944d8a8411ce6cb5d9
 
 function playerPaper(){
       let a = document.createElement('p')
@@ -147,13 +84,6 @@ function playerPaper(){
        attach = true 
 } 
 
-<<<<<<< HEAD
-            else if(e.id === 'scissors') {
-                if(attach == true) {
-                    playerscreen.children[1].remove()
-                    playerscreen.children[2].remove()
-                }
-=======
 function playerScissors(){
     let a = document.createElement('p')
     a.textContent = 'You play "Scissors"',
@@ -163,7 +93,6 @@ function playerScissors(){
     pC = 'scissors'
     attach = true; 
 } 
->>>>>>> fef6de86d6f12090db9047944d8a8411ce6cb5d9
 
 function computerRock(){
     let a2 = document.createElement('p')
